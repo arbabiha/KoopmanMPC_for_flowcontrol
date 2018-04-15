@@ -4,9 +4,9 @@
 % flows" H. Arbabi, M. Korda and I. Mezic
 
 clc,clear
-addpath('.\thehood')
+addpath('./thehood')
 % quadratic programming solver
-addpath('.\thehood\qpOASES-3.1.0\interfaces\matlab')
+addpath('./thehood/qpOASES-3.1.0/interfaces/matlab')
 
 error(['You have to activate the MATLAB interface for qpOASES first:' ...
        ' unzip the qpOASES-3.1.0 in "thehood" folder, then '...
