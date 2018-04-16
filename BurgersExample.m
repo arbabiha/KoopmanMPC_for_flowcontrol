@@ -8,10 +8,15 @@ addpath('./thehood')
 % quadratic programming solver
 addpath('./thehood/qpOASES-3.1.0/interfaces/matlab')
 
-error(['You have to activate the MATLAB interface for qpOASES first:' ...
-       ' unzip the qpOASES-3.1.0 in "thehood" folder, then '...
- 'go to ".\thehood\qpOASES-3.1.0\interfaces\matlab" and run make.m,' ...
-  'then romove this error and run again'])
+
+if (exist('qpOASES_sequence','file') ~= 3)    
+
+    error(['You have to activate the MATLAB interface for qpOASES first:' ...
+        ' unzip the qpOASES-3.1.0 in "thehood" folder, then '...
+        'go to ".\thehood\qpOASES-3.1.0\interfaces\matlab" and run make.m,' ...
+        'then run again'])
+
+end
 
 
 
