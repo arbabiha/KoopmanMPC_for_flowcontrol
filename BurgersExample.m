@@ -174,21 +174,24 @@ end
 
 
 %% final plots
+set(0,'defaultTextInterpreter','latex', ...
+    'defaultLegendInterpreter','latex', ...
+    'defaultAxesTickLabelInterpreter','latex');
 figure(11)
 subplot(3,2,1),cla
 plot(x,f1); hold on
 plot(x,f2); 
-xlabel('$x$','interpreter','latex');
-legend({'$f_1$','$f_2$'},'Interpreter','latex','location','North')
-title('actuation profiles','interpreter','latex')
+xlabel('$x$');
+legend({'$f_1$','$f_2$'},'location','North')
+title('actuation profiles')
 
 
 subplot(3,2,2),cla
 plot(t, U(1,nd:end)); hold on
 plot(t, U(2,nd:end))
-xlabel('$t$','interpreter','latex');
-legend({'$u_1$ ','$u_2$'},'Interpreter','latex')
-title('control inputs','interpreter','latex')
+xlabel('$t$');
+legend({'$u_1$ ','$u_2$'})
+title('control inputs')
 xlim([0,max(t)])
 ylim([min(umin) max(umax)])
 
@@ -196,10 +199,10 @@ subplot(3,2,3),cla
 [TT, XX] = meshgrid(t,x);
 surf(TT,XX,X(:,nd+1:end)); shading interp
 colormap('jet')
-xlabel('$t$','interpreter','latex');
-ylabel('$x$','interpreter','latex');
-zlabel('$v$','interpreter','latex');
-title('state evolution','interpreter','latex')
+xlabel('$t$');
+ylabel('$x$');
+zlabel('$v$');
+title('state evolution')
  view(-18,33)
 xlim([0,t(end)])
 zlim([0 1.1])
@@ -208,15 +211,15 @@ zlim([0 1.1])
 subplot(3,2,4),cla
 plot(t,xr_t,'--'), hold on
 plot(t,mean(X(:,nd+1:end)));
-legend({'reference'},'Interpreter','latex')
-title('spatial mean','interpreter','latex')
+legend({'reference'})
+title('spatial mean')
 
 subplot(3,2,5), hold on
 plot(t(2:end),OutputError/size(yref,1),'k--','linewidth',1);
-xlabel('$t$','interpreter','latex');
-ylabel('$e$','interpreter','latex');
+xlabel('$t$');
+ylabel('$e$');
 xlim([0,t(end)])
-title('tracking error','interpreter','latex')
+title('tracking error')
 
 suptitle(['Control of Burgers PDE using ',num2str(size(yref,1)),' measurements and delay-embedding of dimension ',num2str(nd)])
 
