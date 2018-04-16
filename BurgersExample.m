@@ -122,7 +122,7 @@ for i = 1:nd
 end
 
 % and now the closed-loop simulation
-cost=[];
+OutputError=[];
 for i = 1:Nsim
     if(mod(i,10) == 0)
             fprintf('Closed-loop simulation, %f %% completed \n', 100 * i / Nsim)
@@ -144,7 +144,7 @@ for i = 1:Nsim
     U = [U u(:,1)]; 
     
     ynow = CollectMeasurements(X(:,end));
-    cost = [ cost, (ynow-yref)'*Qy*(ynow-yref) ];
+    OutputError = [ OutputError, (ynow-yref)'*Qy*(ynow-yref) ];
 end
 
 
@@ -173,7 +173,52 @@ for i = 1:Nsim
 end
 
 
+%% final plots
+figure(11)
+subplot(3,2,1),cla
+plot(x,f1); hold on
+plot(x,f2); 
+xlabel('$x$','interpreter','latex');
+legend({'$f_1$','$f_2$'},'Interpreter','latex','location','North')
+title('actuation profiles','interpreter','latex')
 
 
+subplot(3,2,2),cla
+plot(t, U(1,nd:end)); hold on
+plot(t, U(2,nd:end))
+xlabel('$t$','interpreter','latex');
+legend({'$u_1$ ','$u_2$'},'Interpreter','latex')
+title('control inputs','interpreter','latex')
+xlim([0,max(t)])
+ylim([min(umin) max(umax)])
+
+subplot(3,2,3),cla
+[TT, XX] = meshgrid(t,x);
+surf(TT,XX,X(:,nd+1:end)); shading interp
+colormap('jet')
+xlabel('$t$','interpreter','latex');
+ylabel('$x$','interpreter','latex');
+zlabel('$v$','interpreter','latex');
+title('state evolution','interpreter','latex')
+ view(-18,33)
+xlim([0,t(end)])
+zlim([0 1.1])
 
 
+subplot(3,2,4),cla
+plot(t,xr_t,'--'), hold on
+plot(t,mean(X(:,nd+1:end)));
+legend({'reference'},'Interpreter','latex')
+title('spatial mean','interpreter','latex')
+
+subplot(3,2,5), hold on
+plot(t(2:end),OutputError/size(yref,1),'k--','linewidth',1);
+xlabel('$t$','interpreter','latex');
+ylabel('$e$','interpreter','latex');
+xlim([0,t(end)])
+title('tracking error','interpreter','latex')
+
+suptitle(['Control of Burgers PDE using ',num2str(size(yref,1)),' measurements and delay-embedding of dimension ',num2str(nd)])
+
+
+% 
