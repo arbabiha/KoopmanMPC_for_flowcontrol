@@ -139,7 +139,7 @@ end
 
 if(~exist('Ab','var') || ~exist('Bb','var'))
 %     disp('Creating Ab, Bb')
-    [Ab, Bb] = createLifted(A,{B},N);
+    [Ab, Bb] = createMPCmatrices(A,{B},N);
 else
 %     disp('Ab, Bb provided from the outside')
 end
