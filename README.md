@@ -15,11 +15,11 @@ Before you run the code:
 
 go to "./thehood/" and unzip "qpOASES-3.1.0"
 go to subfolder ".\thehood\qpOASES-3.1.0\interfaces\matlab" and run make.m .
-This is required to activate the qpOASIS interface for solving the optimization problem
+This is required to activate the qpOASIS interface for solving the optimization problem.
 
 
 send comments and questions to
-arbabiha@gmail.com
+## arbabiha@gmail.com
 
 H Arbabi
 
