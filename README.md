@@ -19,7 +19,7 @@ This is required to activate the qpOASIS interface for solving the optimization 
 
 
 send comments and questions to
-## arbabiha@gmail.com
+### arbabiha@gmail.com
 
 H Arbabi
 
