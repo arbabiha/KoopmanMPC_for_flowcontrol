@@ -11,7 +11,7 @@ Feel free to play with the paremeters of the code, in particular, try different 
 The whole program, with the initial paremeter settings, runs on my personal laptop in under 2 minutes.
 
 
-### Before you run the code:
+### before you run the code:
 
 go to "./thehood/" and unzip "qpOASES-3.1.0"
 go to subfolder ".\thehood\qpOASES-3.1.0\interfaces\matlab" and run make.m .
