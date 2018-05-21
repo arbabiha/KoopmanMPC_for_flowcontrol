@@ -6,7 +6,7 @@ by H. Arbabi, M. Korda and I. Mezic.
 
 The Koopman-MPC framework is summarized in the below figure:
 
-![alt text](https://github.com/arbabiha/KoopmanMPC_for_flowcontrol/blob/master/thehood/BigPic.png "Koopman-MPC framework")
+![image](https://github.com/arbabiha/KoopmanMPC_for_flowcontrol/blob/master/thehood/BigPic.png "Koopman-MPC framework")
 
 
 
