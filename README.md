@@ -4,6 +4,10 @@ following the paper
 *"A data-driven Koopman model predictive control framework for nonlinear flows"*
 by H. Arbabi, M. Korda and I. Mezic.
 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+
+
+
 ### files in the root folder:
 
 BurgersExample: Runs the Burgers example as explained in the paper, it includes data collection, Extended Dynamic Mode Decomposition (EDMD) for identification of the Koopman linear system, and a run of closed-loop controlled system from some initial condition.
