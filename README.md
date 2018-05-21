@@ -6,8 +6,7 @@ by H. Arbabi, M. Korda and I. Mezic.
 
 The Koopman-MPC framework is summarized in the below figure:
 
-![image](https://github.com/arbabiha/KoopmanMPC_for_flowcontrol/blob/master/thehood/BigPic.png "Koopman-MPC framework")
-
+<img src="https://github.com/arbabiha/KoopmanMPC_for_flowcontrol/blob/master/thehood/BigPic.png" width="48">
 
 
 ### files in the root folder:
