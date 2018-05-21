@@ -4,7 +4,9 @@ following the paper
 *"A data-driven Koopman model predictive control framework for nonlinear flows"*
 by H. Arbabi, M. Korda and I. Mezic.
 
-![alt text](https://github.com/arbabiha/KoopmanMPC_for_flowcontrol/blob/master/thehood/BigPic.png "Logo Title Text 1")
+The Koopman-MPC framework is summarized in the below figure:
+
+![alt text](https://github.com/arbabiha/KoopmanMPC_for_flowcontrol/blob/master/thehood/BigPic.png "Koopman-MPC framework")
 
 
 
