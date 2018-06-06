@@ -48,7 +48,7 @@ umin =-.1;
 
 %% ************************PART I: Identification ********************** %%
 % STEP1: Collecting data for EDMD
-Ntraj = 50;    % number of trajectories
+Ntraj = 100;    % number of trajectories
 SimLength = 200; % Number of steps per trajectory
 [X,Y,U] = CollectData(SimPar,IC1,IC2,f1,f2,umin,umax,Ntraj,SimLength);
 
@@ -72,6 +72,9 @@ nd = 5; % dimension of embedding (set 1 for no embedding)
 n = size(A,1);  % state dimension
 r = size(C,1);  % output dimension
 nu= 2;          % input dimension
+
+
+
 
 % cost matrices
 Qy = eye(r); % cost matrix on state discrepancy, represents energy
@@ -221,7 +224,5 @@ ylabel('$e$');
 xlim([0,t(end)])
 title('tracking error')
 
-suptitle(['Control of Burgers PDE using ',num2str(size(yref,1)),' measurements and delay-embedding of dimension ',num2str(nd)])
 
 
-% 
