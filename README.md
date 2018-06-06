@@ -11,9 +11,12 @@ The Koopman-MPC framework is summarized in the below figure:
 
 ### files in the root folder:
 
-BurgersExample: Runs the Burgers example as explained in the paper, it includes data collection, Extended Dynamic Mode Decomposition (EDMD) for identification of the Koopman linear system, and a run of closed-loop controlled system from some initial condition.
+#### BurgersExample: 
+Runs the Burgers example as explained in the paper, it includes data collection, Extended Dynamic Mode Decomposition (EDMD) for identification of the Koopman linear system, and a run of closed-loop controlled system from some initial condition.
 Feel free to play with the paremeters of the code, in particular, try different observables, embedding dimension, reference signal, initial condition, etc.
 The whole program, with the initial paremeter settings, runs on my personal laptop in under 2 minutes.
+
+
 
 
 ### before you run the code:
