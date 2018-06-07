@@ -19,7 +19,7 @@ The whole program, with the initial paremeter settings, runs on my personal lapt
 
 #### CavityExample
 Runs the lid-driven cavity flow example as explained in the paper,  including  EDMD for identification of the Koopman linear system, and a run of closed-loop controlled system from some initial condition on the limit cycle. There are two options to run this code:
-1- ask the code to generate data for EDMD. This is lengthy process and for the parameter values reported in the paper takes ~10 hours on a powerful desktop (with no parallelization), or 2- go to https://ucsb.box.com/s/367tvkgnzby61x9nrh64q81748ugaw63 and download the data file "Cavity_data_4EDMD_0" (~3GB) which is the data used in the paper. Using the data file, the program  takes about 5 minutes to run on my laptop. 
+1- ask the code to generate data for EDMD. This is a lengthy process and for the parameter values reported in the paper takes ~10 hours on a powerful desktop (with no parallelization), or 2- go to https://ucsb.box.com/s/367tvkgnzby61x9nrh64q81748ugaw63 and download the data file "Cavity_data_4EDMD_0" (~3GB) which is the data used in the paper. Using the data file, the program  takes about 5 minutes to run on my laptop. 
 
 
 
