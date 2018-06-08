@@ -1,5 +1,5 @@
 # KoopmanMPC_for_flowcontrol
-This project demonstates the application of Koopman-MPC framework for flow control with the example of Burgers equation,
+This project demonstates the application of Koopman-MPC framework for flow control,
 following the paper
 *"A data-driven Koopman model predictive control framework for nonlinear flows"*
 by H. Arbabi, M. Korda and I. Mezic.
