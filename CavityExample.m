@@ -53,7 +53,7 @@ CavitySystemID(DataFileName);
 
 
 %  load any of the predictors
-load(['KoopmanLinSys_Re13_k50_random']);    % predictor with k=50 random measurements
+load('KoopmanLinSys_Re13_k50_random');    % predictor with k=50 random measurements
 
 %% ************************PART II: control ********************** %%
 % set up MPC controller
@@ -182,7 +182,8 @@ title('control tracking error')
 subplot(2,2,4)
 PlotVorticity(X(:,end)-xref);
 hold on
+[ Grid ] = CavityGridOperators( SimPar.N );
 plot(CollectOutput(Grid.xx),CollectOutput(Grid.yy),'x')
 axis square
 axis([-1 1 -1 1])
-title('vorticity discrepancy at final time and sample points')
+title('vorticity discrepancy at final time and sensor locations')
