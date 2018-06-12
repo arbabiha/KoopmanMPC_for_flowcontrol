@@ -2,6 +2,14 @@ function CavitySystemID(DataFileName)
 
 % building the Koopman linear system for cavity flow
 % from the data in the file named "DataFileName"
+disp('loading EDMD data ...')
+
+% reminder
+if ~strcmp(DataFileName,'Cavity_data_4EDMD_0.mat')
+        warning(['if yu are using your own data', ...
+        'make sure to remove the snapshots that contain NaN or Inf']);
+end
+
 load(DataFileName)
 
 
@@ -16,18 +24,14 @@ if(SUBTRACT_MEAN)
     Y = bsxfun(@minus,Y,x_mean);
 end
 
-% reminder
-if ~strcmp(DataFileName,'Cavity_data_4EDMD_0')
-        warning(['if yu are using your own data', ...
-        'make sure to remove the snapshots that contain NaN or Inf');
-end
+
 
 % the following sensor locations generate the plots in the paper
 load('CavitySensorLocations.mat','pindex')
 
 
 % construct models for various number (k) of spatial measurements
-for k = [2,5,10,40,100]
+for k = [2,5,10,40,50,100]
     tic
     
     Grid= CavityGridOperators( SimPar.N );
@@ -49,6 +53,7 @@ for k = [2,5,10,40,100]
     plot(CollectOutput(Grid.xx),CollectOutput(Grid.yy),'x')
     axis square
     axis([-1,1,-1,1])
+    title(['location of sensors in cavity, k=',num2str(k)])
     drawnow
     XX = CollectOutput(X);
     YY = CollectOutput(Y);
@@ -130,9 +135,9 @@ for k = [2,5,10,40,100]
     
     
     
+    modelfilename = ['KoopmanLinSys_Re13_k',num2str(k),'_random'];
+    save(modelfilename,'A','B','C','nd','CollectOutput','KE_embed','x_mean','LiftFun','CreateZeta','Delay_Embed')
 
-    save(['KoopmanLinSys_Re',num2str(Re),'_k',num2str(k),'_random'],'A','B','C','nd','CollectOutput','KE_embed','x_mean','LiftFun','CreateZeta','Delay_Embed')
-
-    fprintf('Koopman model of cavity created using %d observables \n',k)
+    fprintf('Koopman model of cavity created using %d measurements \n',k)
     toc
 end
