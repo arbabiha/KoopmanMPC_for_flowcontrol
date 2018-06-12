@@ -1,6 +1,5 @@
 function [ Grid,varargout ] = CavityGridOperators( N )
 %CAVITYGRIDOPERATORS generates the grid and operators
-addpath('C:\Users\harbabi\Documents\MATLAB\CavityFlow\FlowSimulation\modules')
 [Grid]=CollocationGrid_q(N);    % grid coordiuantes and indices
 
 if nargout==2
@@ -9,7 +8,6 @@ end
 
 [~,Grid.wc] = clencurt(N);
  Grid.W = kron(Grid.wc,Grid.wc);   % integration coefficients for computation of Kinetic Energy
- rmpath('C:\Users\harbabi\Documents\MATLAB\CavityFlow\FlowSimulation\modules')
 
 end
 
