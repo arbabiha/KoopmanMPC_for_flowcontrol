@@ -2,7 +2,7 @@
 This project demonstates the application of Koopman-MPC framework for flow control,
 following the paper
 *"A data-driven Koopman model predictive control framework for nonlinear flows"*
-by H. Arbabi, M. Korda and I. Mezic.
+by H. Arbabi, M. Korda and I. Mezic (https://arxiv.org/pdf/1804.05291.pdf).
 
 The Koopman-MPC framework is summarized in the below figure:
 
